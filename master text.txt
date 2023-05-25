@@ -1,0 +1,36 @@
+[---- Simple Module Creation and Using in Same Project ----] changed
+
+	1) Create a new project
+ main branch changed here
+ 
+	2) Now go to files-> modules -> new modules and create a module and select andorid library from left pane
+
+	3) Sync project 
+
+	4) Go to build and select [make module]
+
+	5) Now your module is ceated just implement it as a dependency in your module build.gradle file of project
+		e.g (implementation project(":your_project_name"))
+			
+
+[----Simple Module Creation and Using it in Other Project ----]
+
+	Now, if you have create a module/library and you want to use it in another project simply go to 
+	build and select [make module]
+
+	1) Browse to the project directory directly or go the left pane in android studio and look for the library you 
+		created and right click on it and look for open in explorer, this will open the path in file explorer
+		now go the location e.g project_name\library_name\build\outputs\aar
+	
+	2) Now, copy that file and go to android studio select the project view of the project and 
+		go to app -> libs ->and paste .aar file that location
+	
+	3) Now, implement it as a dependency in your module build.gradle file of project 
+		e.g implementation files("libs/mylibrary_2023_1-debug.aar")
+		
+	4) Add this line in settings.gradle file [include ':library_name'] dont't add the [debug] word with your library name, as it sometimes
+		mentioned with .aar file, just use the actual name in there
+
+
+
+////--------////--------////--------////--------////--------////--------////-------////--------////--------////-------////
